@@ -3,15 +3,29 @@
   padding: 0px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background-color: #01000d;
+  color: white;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 nav {
   height: 60px;
-  background: linear-gradient(45deg, #6316c0, rgb(47, 18, 133));
+  background-color: transparent;
 }
 nav ul {
   display: flex;
   color: white;
+  justify-content: flex-end;
 }
 nav ul li {
   margin-right: 40px;
   list-style-type: none;
+  margin-top: 10px;
+  font-size: 20px;
 }/*# sourceMappingURL=layout.css.map */
