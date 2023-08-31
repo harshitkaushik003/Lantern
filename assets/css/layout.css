@@ -28,4 +28,12 @@ nav ul li {
   list-style-type: none;
   margin-top: 10px;
   font-size: 20px;
+}
+nav ul li .header-btns {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(45deg, #7709a6, #6316c0);
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: -1px -1px 10px 0px #7709a6;
 }/*# sourceMappingURL=layout.css.map */
