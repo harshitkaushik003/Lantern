@@ -5,6 +5,9 @@ const app = express();
 
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+const Session = require('express-session');
 
 app.use(express.urlencoded());
 app.use(expressLayouts)
@@ -15,7 +18,19 @@ app.set('layout extractStyles', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use(Session({
+    name: 'lantern',
+    secret: 'one',
+    saveUninitialized: false,
+    resave:true,
+    cookie: {
+        maxAge: (1000*60*100)
+    }
+}));
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 app.use('/', require('./routes'));
 app.listen(port, function(err){
     if(err){

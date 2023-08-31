@@ -32,7 +32,8 @@ module.exports.create = async function(req, res){
         console.log("error while creating the user");
         return res.redirect('back');
     }
+}
 
-
-
+module.exports.createSession = function(req, res){
+    return res.redirect('/');
 }
