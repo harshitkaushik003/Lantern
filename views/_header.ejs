@@ -3,7 +3,13 @@
         <li>Header</li>
         <li>
             <a href="/users/sign-in">
-                <div class="header-btns">Sign in</div>
+                <div class="header-btns">
+                    <%if(locals.user){%>
+                        <%= user.name %>
+                    <%}else{%>
+                        Sign In
+                    <%}%>
+                </div>
                 
             </a>
         </li>

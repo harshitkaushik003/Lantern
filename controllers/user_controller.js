@@ -6,11 +6,17 @@ module.exports.profile = function(req, res){
 }
 
 module.exports.signIn = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profiles');
+    }
     return res.render('sign-in', {
         title:"sign in"
     })
 }
 module.exports.signUp = function(req, res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profiles');
+    }
     return res.render('sign-up', {
         title:"sign up"
     })
