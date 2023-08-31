@@ -38,6 +38,7 @@
                 display: flex;
                 flex-direction: column;
                 margin-top: 20px;
+                color:white;
                 input{
                     height: 50px;
                     margin-top: 10px;
@@ -47,9 +48,12 @@
                     width: 88%;
                     padding-left: 10px;
                     margin-left: 30px;
+                    color: white;
+                    font-family: 'Noto Sans KR', sans-serif;
+
                 }
 
-                input[type='submit']{
+                input[type='submit'], input[type='button']{
                     height: 30px;
                     width: 60%;
                     margin-left: 100px;
@@ -60,7 +64,7 @@
                     border: none;
                     font-size: 20px;
                     margin-top: 20px;
-                    
+                    // box-shadow: 1px 1px 10px 2px #d88af9;
                 }
             }
         }
