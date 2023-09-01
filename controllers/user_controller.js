@@ -43,3 +43,13 @@ module.exports.create = async function(req, res){
 module.exports.createSession = function(req, res){
     return res.redirect('/');
 }
+
+module.exports.signOut = function(req, res){
+    req.logout(function(err){
+        if(err){
+            console.log(`Error ${err} while logging out`);
+            return;
+        }
+    });
+    return res.redirect('/');
+}

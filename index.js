@@ -8,6 +8,9 @@ const db = require('./config/mongoose');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const Session = require('express-session');
+// const MongoStore = require('connect-mongo')(Session);
+const mongoStore = require('connect-mongo')(Session);
+
 
 app.use(express.urlencoded());
 app.use(expressLayouts)
@@ -25,12 +28,21 @@ app.use(Session({
     resave:true,
     cookie: {
         maxAge: (1000*60*100)
-    }
+    },
+    store: new mongoStore(
+    {
+        mongooseConnection: db,
+        autoRemove: 'disabled',
+
+    },function(err){
+        console.log(err || "Connect mongodb setup ok");
+    })
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
 app.use('/', require('./routes'));
 app.listen(port, function(err){
     if(err){

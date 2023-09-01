@@ -14,9 +14,19 @@
             </a>
         </li>
         <li>
-            <a href="/users/sign-up">
-                <div class="header-btns">Sign Up</div>
-            </a>
+            <%if(locals.user){%>
+                <a href="/users/sign-out">
+                    <div class="header-btns">
+                        Sign Out
+                    </div>
+                </a>                    
+            <%}else{%>
+                <a href="/users/sign-up">
+                    <div class="header-btns">
+                        Sign Up
+                    </div>
+                </a>
+            <%}%>
         </li>
     </ul>
 </nav>
