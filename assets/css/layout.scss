@@ -30,7 +30,8 @@ nav{
             margin-top: 10px;
             font-size: 20px;
             .header-btns{
-                width: 100px;
+                padding: 0px 10px 0px;
+                width: auto;
                 height: 40px;
                 background: linear-gradient(45deg,#7709a6, #6316c0);
                 text-align: center;
@@ -41,9 +42,9 @@ nav{
                     top: 2px;
                 }
             }
-            .sign-up{
-                width: 130px;
-            }
+            // .sign-up{
+            //     width: 130px;
+            // }
         }
     }
 }

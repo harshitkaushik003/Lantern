@@ -1,7 +1,8 @@
 const User = require('../models/user');
 module.exports.profile = function(req, res){
     return res.render('user', {
-        title:"userPage"
+        title:"userPage",
+        excludeNavbar: false
     })
 }
 
@@ -10,7 +11,8 @@ module.exports.signIn = function(req, res){
         return res.redirect('/users/profiles');
     }
     return res.render('sign-in', {
-        title:"sign in"
+        title:"sign in",
+        excludeNavbar: 'true'
     })
 }
 module.exports.signUp = function(req, res){
@@ -18,7 +20,8 @@ module.exports.signUp = function(req, res){
         return res.redirect('/users/profiles');
     }
     return res.render('sign-up', {
-        title:"sign up"
+        title:"sign up",
+        excludeNavbar: 'true'
     })
 }
 
