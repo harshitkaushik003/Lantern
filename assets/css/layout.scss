@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+*::-webkit-scrollbar{
+    display:none;
+}
 a{
     color: white;
     text-decoration: none;
@@ -34,7 +36,13 @@ nav{
                 text-align: center;
                 border-radius: 5px;
                 box-shadow: -1px -1px 10px 0px #7709a6;
-                
+                .fa-plus{
+                    position: relative;
+                    top: 2px;
+                }
+            }
+            .sign-up{
+                width: 130px;
             }
         }
     }

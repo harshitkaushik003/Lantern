@@ -3,6 +3,10 @@
   padding: 0px;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -36,4 +40,11 @@ nav ul li .header-btns {
   text-align: center;
   border-radius: 5px;
   box-shadow: -1px -1px 10px 0px #7709a6;
+}
+nav ul li .header-btns .fa-plus {
+  position: relative;
+  top: 2px;
+}
+nav ul li .sign-up {
+  width: 130px;
 }/*# sourceMappingURL=layout.css.map */

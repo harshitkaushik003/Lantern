@@ -1,0 +1,21 @@
+#main-home-container {
+  width: 100vw;
+  height: 70vw;
+  background-color: red;
+  display: flex;
+}
+#main-home-container .functionality {
+  width: 20%;
+  height: 100%;
+  background-color: green;
+}
+#main-home-container .main-body {
+  width: 60%;
+  height: 100%;
+  background-color: pink;
+}
+#main-home-container .friends {
+  width: 20%;
+  height: 100%;
+  background-color: rgb(226, 187, 14);
+}/*# sourceMappingURL=home.css.map */
