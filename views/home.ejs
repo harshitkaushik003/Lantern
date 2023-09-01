@@ -1,6 +1,13 @@
 <link rel="stylesheet" href="/css/home.css">
 <div id="main-home-container">
     <div class="functionality"></div>
-    <div class="main-body"></div>
+    <div class="main-body">
+        <%for (posts of posts){%>
+            <div class="post-display">
+                <%= posts.content %>
+                <%= posts.user.name %>
+            </div>    
+        <%}%>
+    </div>
     <div class="friends"></div>
 </div>

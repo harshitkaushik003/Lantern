@@ -2,9 +2,17 @@
     <nav>
         <ul>
             <li>Header</li>
+            <li>
+                <a href="/">
+                    <div class="header-btns sign-up">
+                        <i class="fa-solid fa-home"></i>
+                        Home
+                    </div>
+                </a>
+            </li>
             <%if(locals.user){%>
                 <li>
-                    <a href="/posts/create">
+                    <a href="/posts">
                         <div class="header-btns">
                             <i class="fa-solid fa-plus"></i>
                             create
@@ -44,6 +52,20 @@
                 <%}%>
             </li>
         </ul>
+    </nav>
+<%}else{%>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">
+                    <div class="header-btns sign-up">
+                        <i class="fa-solid fa-home"></i>
+                        Home
+                    </div>
+                </a>
+            </li>
+        </ul>
+
     </nav>
 <%}%>
 
