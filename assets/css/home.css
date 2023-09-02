@@ -51,6 +51,7 @@
   position: relative;
   left: 20px;
   top: 10px;
+  cursor: pointer;
 }
 #main-home-container .friends {
   width: 20%;

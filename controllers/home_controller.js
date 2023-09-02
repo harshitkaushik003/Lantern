@@ -1,7 +1,9 @@
 const Post = require('../models/post');
 module.exports.home = async function(req, res){
     try {
-        const post = await Post.find({}).populate('user');
+        const post = await Post.find({})
+        .sort('-createdAt')
+        .populate('user');
         return res.render('home', {
             title: "HomePage",
             text: "Lantern",
