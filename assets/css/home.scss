@@ -6,17 +6,67 @@
     .functionality{
         width: 20%;
         height: 100%;
-        background-color: blue;
+        // background-color: blue;
+        border-right: 1px solid white;
+
     }
     .main-body{
         width: 60%;
         height: 100%;
         // background-color: white;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        .post-display{
+            width: 90%;
+            height: auto;
+            // background-color: white;
+            // border-radius: 20px;
+            box-shadow: 1px 1px 5px 5px #7709a6;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            margin-bottom: 20px;
+            .user-name{
+                width: 100%;
+                height: 20%;
+                margin-bottom: 20px;
+                // background-color: green;
+                p{
+                    position: relative;
+                    left: 20px;
+                    top: 2px;
+                    font-size: 106%;
+                }
+            }   
+            .post-content{
+                width: 100%;
+                height: auto;
+                // background-color: red;
+                p{
+                    position: relative;
+                    left: 20px;
+                    font-size: 121%;
+                    word-wrap: break-word;
+                    font-weight:700;
+                }
+            }
+            .interactions{
+                .fa-heart{
+                    position: relative;
+                    left: 20px;
+                    top: 10px;
+                }
+            }
+        }
+
     }
     .friends{
         width: 20%;
         height: 100%;
-        background-color:red;
+        // background-color:red;
+        border-left: 2px solid white;
     }
 }
 

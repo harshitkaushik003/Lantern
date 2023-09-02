@@ -4,8 +4,20 @@
     <div class="main-body">
         <%for (posts of posts){%>
             <div class="post-display">
-                <%= posts.content %>
-                <%= posts.user.name %>
+                <div class="user-name">
+                    <p>
+                        <%= posts.user.name %>
+                    </p>
+                    
+                </div>
+                <div class="post-content">
+                    <p>
+                        <%= posts.content %>
+                    </p>
+                </div>
+                <div class="interactions">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
             </div>    
         <%}%>
     </div>
