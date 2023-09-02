@@ -1,23 +1,26 @@
 #main-home-container{
     width: 100vw;
-    height: 70vw;
+    height: 100vh;
     // background-color: red;
+    // position: fixed;
     display: flex;
     .functionality{
         width: 20%;
         height: 100%;
         // background-color: blue;
         border-right: 1px solid white;
+        // position: fixed;
 
     }
     .main-body{
         width: 60%;
-        height: 100%;
+        // height: 100%;
         // background-color: white;
         display:flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
+        overflow-x: scroll;
         .post-display{
             width: 90%;
             height: auto;
@@ -26,7 +29,7 @@
             box-shadow: 1px 1px 5px 5px #7709a6;
             padding-top: 20px;
             padding-bottom: 20px;
-
+            margin-top: 20px;
             margin-bottom: 20px;
             .user-name{
                 width: 100%;

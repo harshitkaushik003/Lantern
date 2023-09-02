@@ -33,9 +33,9 @@ module.exports.create = async function(req, res){
         const user = await User.findOne({email: req.body.email});
         if(!user){
             User.create(req.body);
-            return req.redirect('/users/sign-in');
+            return res.redirect('/users/sign-in');
         }else{
-            return res.redirect('back');
+            return res.redirect('/user/sign-in');
         }
     }catch(err){
         console.log("error while creating the user");

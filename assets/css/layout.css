@@ -21,6 +21,7 @@ body {
 nav {
   height: 60px;
   background-color: transparent;
+  box-shadow: 1px 1px 5px 2px #7709a6;
 }
 nav ul {
   display: flex;

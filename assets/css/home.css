@@ -1,6 +1,6 @@
 #main-home-container {
   width: 100vw;
-  height: 70vw;
+  height: 100vh;
   display: flex;
 }
 #main-home-container .functionality {
@@ -10,11 +10,11 @@
 }
 #main-home-container .main-body {
   width: 60%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  overflow-x: scroll;
 }
 #main-home-container .main-body .post-display {
   width: 90%;
@@ -22,6 +22,7 @@
   box-shadow: 1px 1px 5px 5px #7709a6;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 #main-home-container .main-body .post-display .user-name {
