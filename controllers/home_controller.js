@@ -3,7 +3,15 @@ module.exports.home = async function(req, res){
     try {
         const post = await Post.find({})
         .sort('-createdAt')
-        .populate('user');
+        .populate('user')
+        .populate(
+            {
+                path:'comments',
+                populate:{
+                    path:'user'
+                }
+            }
+        );
         return res.render('home', {
             title: "HomePage",
             text: "Lantern",

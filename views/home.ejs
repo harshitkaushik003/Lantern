@@ -20,6 +20,25 @@
                 <div class="interactions">
                     <i class="fa-regular fa-heart"></i>
                 </div>
+                <div class="comment-section">
+                    <% if (locals.user)  { %>
+                        <form action="/comments/create" method="POST">
+                            <input type="text" class="comment-content" name="content" placeholder="add a comment">
+                            <input type="hidden" name="post" value="<%= posts._id %>">
+                            <input type="submit" value="Add">
+                        </form>
+                    <% } %>
+                    <div class="comment-list">
+                        <div id="post-comments-<%=posts._id%>">
+                            <% for(comments of posts.comments){ %>
+                                <div class="comment-box">
+                                    <p class="comment-name"><%= comments.user.name %></p>
+                                    <p class="comment-content"><%= comments.content %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
             </div>    
         <%}%>
     </div>
