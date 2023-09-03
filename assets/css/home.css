@@ -24,6 +24,7 @@
   padding-bottom: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
+  position: relative;
 }
 #main-home-container .main-body .post-display .user-name {
   width: 100%;
@@ -86,9 +87,10 @@
   border-width: 0px 0px 0px 1px;
   width: 50%;
   border-bottom-left-radius: 10px;
-  border-style: dotted;
+  border-style: dashed;
   border-color: white;
   padding-left: 20px;
+  position: relative;
 }
 #main-home-container .main-body .post-display .comment-section .comment-list .comment-box .comment-name {
   font-size: 12px;
@@ -100,4 +102,17 @@
   width: 20%;
   height: 100%;
   border-left: 2px solid white;
+}
+
+.delete-icon a .fa-trash-can {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+}
+
+.delete-icon-comment a .fa-trash-can {
+  position: absolute;
+  left: -24px;
+  top: 19px;
+  font-size: 13px;
 }/*# sourceMappingURL=home.css.map */

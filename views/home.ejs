@@ -6,6 +6,13 @@
     <div class="main-body">
         <%for (posts of posts){%>
             <div class="post-display">
+                <% if (locals.user && locals.user.id == posts.user.id) { %>
+                    <div class="delete-icon">
+                        <a href="/">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                    </div>      
+                <% } %>
                 <div class="user-name">
                     <p>
                         <%= posts.user.name %>
@@ -23,7 +30,7 @@
                 <div class="comment-section">
                     <% if (locals.user)  { %>
                         <form action="/comments/create" method="POST">
-                            <input type="text" class="comment-content" name="content" placeholder="add a comment">
+                            <input type="text" class="comment-content" name="content" placeholder="add a comment" required>
                             <input type="hidden" name="post" value="<%= posts._id %>">
                             <input type="submit" value="Add">
                         </form>
@@ -31,7 +38,16 @@
                     <div class="comment-list">
                         <div id="post-comments-<%=posts._id%>">
                             <% for(comments of posts.comments){ %>
+
                                 <div class="comment-box">
+
+                                    <% if (locals.user && locals.user.id == comments.user.id) { %>
+                                        <div class="delete-icon-comment">
+                                            <a href="/">
+                                                <i class="fa-solid fa-trash-can"></i>                                            
+                                            </a> 
+                                        </div> 
+                                    <% } %>
                                     <p class="comment-name"><%= comments.user.name %></p>
                                     <p class="comment-content"><%= comments.content %></p>
                                 </div>
