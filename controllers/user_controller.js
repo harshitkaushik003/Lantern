@@ -1,9 +1,16 @@
 const User = require('../models/user');
-module.exports.profile = function(req, res){
-    return res.render('user', {
-        title:"userPage",
-        excludeNavbar: false
-    })
+const Post = require('../models/post');
+module.exports.profile = async function(req, res){
+    const post = await Post.find({user: req.user.id}).populate('user').populate('comments');
+    if(post){
+        console.log(post);
+        return res.render('user', {
+            title:"userPage",
+            excludeNavbar: false,
+            posts: post
+        })       
+    }
+
 }
 
 module.exports.signIn = function(req, res){

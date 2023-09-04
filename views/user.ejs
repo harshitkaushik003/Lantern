@@ -1,12 +1,15 @@
 <link rel="stylesheet" href="/css/user.css">
-<center>
-    <h1>
-      User Profile Page
-    </h1>
+<link rel="stylesheet" href="/css/home.css">
 
-    <h3>
-      <p><%=user.name%></p>
-      <p><%= user.email %></p>
-    </h3>
+<div id="main-home-container">
+  <div class="functionality">
+      some content
+  </div>
+  <div class="main-body">
+      <%for (posts of posts){%>
+          <%-include('_posts')-%>
+      <%}%>
+  </div>
+  <div class="friends"></div>
+</div>
 
-</center>

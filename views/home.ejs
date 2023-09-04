@@ -5,57 +5,7 @@
     </div>
     <div class="main-body">
         <%for (posts of posts){%>
-            <div class="post-display">
-                <% if (locals.user && locals.user.id == posts.user.id) { %>
-                    <div class="delete-icon">
-                        <a href="/posts/delete/<%= posts.id %>">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </a>
-                    </div>      
-                <% } %>
-                <div class="user-name">
-                    <p>
-                        <%= posts.user.name %>
-                    </p>
-                    
-                </div>
-                <div class="post-content">
-                    <p>
-                        <%= posts.content %>
-                    </p>
-                </div>
-                <div class="interactions">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="comment-section">
-                    <% if (locals.user)  { %>
-                        <form action="/comments/create" method="POST">
-                            <input type="text" class="comment-content" name="content" placeholder="add a comment" required>
-                            <input type="hidden" name="post" value="<%= posts._id %>">
-                            <input type="submit" value="Add">
-                        </form>
-                    <% } %>
-                    <div class="comment-list">
-                        <div id="post-comments-<%=posts._id%>">
-                            <% for(comments of posts.comments){ %>
-
-                                <div class="comment-box">
-
-                                    <% if (locals.user && locals.user.id == comments.user.id) { %>
-                                        <div class="delete-icon-comment">
-                                            <a href="/comments/delete/<%= comments.id %>">
-                                                <i class="fa-solid fa-trash-can"></i>                                            
-                                            </a> 
-                                        </div> 
-                                    <% } %>
-                                    <p class="comment-name"><%= comments.user.name %></p>
-                                    <p class="comment-content"><%= comments.content %></p>
-                                </div>
-                            <% } %>
-                        </div>
-                    </div>
-                </div>
-            </div>    
+            <%-include('_posts')-%>
         <%}%>
     </div>
     <div class="friends"></div>
