@@ -11,17 +11,24 @@ module.exports.post = function(req, res){
     }   
 }
 
-module.exports.create =  function(req, res){
-    Post.create({
-        content: req.body.content,
-        user: req.user._id
-    })
-    .then(function(){
-        return res.redirect('/');
-    })
-    .catch(function(err){
-        console.log(`Error while creating a post \n ${err}`);
-    })
+module.exports.create = async function(req, res){
+    try {
+        const response = await Post.create({
+            content: req.body.content,
+            user: req.user._id
+        });
+        if(req.xhr){
+            return res.status(200).json({
+                data:{
+                    post: response
+                },
+                message: "Post Created"
+            })
+        }
+           return res.redirect('/');
+    } catch (error) {
+        console.log(`Error while creating a post \n ${error}`);   
+    }
 }
 
 module.exports.destroy = async function(req,res){
