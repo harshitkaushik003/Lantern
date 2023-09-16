@@ -8,7 +8,8 @@ passport.use(new LocalStrategy({
     try{
         const user = await User.findOne({email: email});
         if(!user || user.password != password){
-            return done(null, false);
+            
+            return done(null, false, { message: 'Incorrect email or password' });
         }
         return done(null, user);
     }catch(err){

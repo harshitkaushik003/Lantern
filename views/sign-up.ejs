@@ -4,6 +4,11 @@
         <div class="heading">
             <span>sign up</span>
         </div>
+        <% if (locals.flash.error && locals.flash.error.length > 0) { %>
+            <div class="flash-container-error">
+                <%= flash.error %>
+            </div>        
+        <% } %>
         <div class="main-body">
             <form action="/users/create" method="post">
                 <input type="text" name="name" placeholder="enter name" required>
