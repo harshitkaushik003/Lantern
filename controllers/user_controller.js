@@ -1,5 +1,9 @@
 const User = require('../models/user');
 const Post = require('../models/post');
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 module.exports.profile = async function(req, res){
     const post = await Post.find({user: req.user.id}).populate('user').populate('comments');
     if(post){
@@ -40,9 +44,29 @@ module.exports.create = async function(req, res){
     try{
         const user = await User.findOne({email: req.body.email});
         if(!user){
-            User.create(req.body);
-            return res.redirect('/users/sign-in');
+            const plainPassword = req.body.password;
+            bcrypt.genSalt(saltRounds, function(err, salt){
+                if(err){
+                    console.log("Error in creating encryption");
+                }
+                bcrypt.hash(plainPassword, salt, function(err, hashedPassword){
+                    if(err){
+                        console.log("Error", err);
+                    }
+                    User.create({
+                        name: req.body.name,
+                        email: req.body.email,
+                        password: hashedPassword
+                    });
+                    req.flash("success", "user created successfully");
+                    return res.redirect('/users/sign-in');
+                    
+                })
+            })
+            // User.create(req.body);
+            // return res.redirect('/users/sign-in');
         }else{
+            req.flash("success", "user already exist");
             return res.redirect('/user/sign-in');
         }
     }catch(err){

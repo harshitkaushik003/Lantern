@@ -25,7 +25,7 @@ module.exports.create = async function(req, res){
                 message: "Post Created"
             })
         }
-           return res.redirect('/');
+        return res.redirect('/');
     } catch (error) {
         console.log(`Error while creating a post \n ${error}`);   
     }

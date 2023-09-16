@@ -11,6 +11,7 @@
                 data: newPostForm.serialize(),
                 success: function (response) {
                     console.log(response);
+                    window.location.href = "/";
                 },
                 error: function(error){
                     console.log(error.responseText);
