@@ -3,12 +3,14 @@ module.exports.home = async function(req, res){
     try {
         const post = await Post.find({})
         .sort('-createdAt')
-        .populate('user')
+        .populate('user', '-password')
         .populate(
             {
                 path:'comments',
+                options: {sort: {createdAt: 1}},
                 populate:{
-                    path:'user'
+                    path:'user',
+                    select: '-password'
                 }
             }
         );

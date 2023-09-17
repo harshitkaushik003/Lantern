@@ -28,7 +28,7 @@
 }
 #main #sign-in-container .main-body {
   width: 100%;
-  height: 400px;
+  height: 500px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -37,6 +37,7 @@
   flex-direction: column;
   margin-top: 20px;
   color: white;
+  position: relative;
 }
 #main #sign-in-container .main-body form input {
   height: 50px;
@@ -61,4 +62,13 @@
   border: none;
   font-size: 20px;
   margin-top: 20px;
+}
+#main #sign-in-container .main-body form .fa-google {
+  position: absolute;
+  left: 110px;
+  top: 200px;
+}
+#main #sign-in-container .main-body form .sign-up {
+  left: 111px;
+  top: 321px;
 }/*# sourceMappingURL=sign-in.css.map */

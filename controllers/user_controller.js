@@ -3,17 +3,18 @@ const Post = require('../models/post');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const validator = require('validator');
 
 module.exports.profile = async function(req, res){
-    const post = await Post.find({user: req.user.id}).populate('user').populate('comments');
-    if(post){
-        console.log(post);
-        return res.render('user', {
-            title:"userPage",
-            excludeNavbar: false,
-            posts: post
-        })       
-    }
+    // const post = await Post.find({user: req.user.id}).populate('user').populate('comments');
+    return res.render('user', {
+        title:"userPage",
+        excludeNavbar: false,
+    })  
+    
+    // if(post){
+             
+    // }
 
 }
 
@@ -42,6 +43,11 @@ module.exports.create = async function(req, res){
         return res.redirect('back');
     }
     try{
+        const tempEmail = req.body.email;
+        if( !validator.isEmail(tempEmail)){
+            req.flash('error', "Email Format is Invalid");
+            return res.redirect('back');
+        }
         const user = await User.findOne({email: req.body.email});
         if(!user){
             const plainPassword = req.body.password;
