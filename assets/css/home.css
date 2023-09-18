@@ -102,6 +102,14 @@
   width: 20%;
   height: 100%;
   border-left: 2px solid white;
+  padding-left: 20px;
+}
+#main-home-container .friends .user_name {
+  font-size: 24px;
+}
+#main-home-container .friends .user_email {
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .delete-icon a .fa-trash-can {

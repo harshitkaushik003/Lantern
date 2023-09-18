@@ -8,6 +8,22 @@
             <%-include('_posts')-%>
         <%}%>
     </div>
-    <div class="friends"></div>
+    <div id="user-friends" class="friends">
+        <h2>Friends</h2>
+        <% for( u of all_users ) { %>
+            <p>
+                <a href="/users/profiles/<%= u.id %>">
+                    <p>
+                        <div class="user_name">
+                            <%= u.name %>
+                        </div>
+                        <div class="user_email">
+                            <%= u.email %>
+                        </div>
+                    </p>
+                </a>
+            </p>
+        <% } %>
+    </div>
 </div>
 <!-- <script src="/js/home_posts.js"></script> -->

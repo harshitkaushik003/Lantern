@@ -7,9 +7,12 @@ const validator = require('validator');
 
 module.exports.profile = async function(req, res){
     // const post = await Post.find({user: req.user.id}).populate('user').populate('comments');
+    const user = await User.findById(req.params.id);
+    
     return res.render('user', {
         title:"userPage",
-        excludeNavbar: false,
+        profile_user: user, 
+        excludeNavbar: false
     })  
     
     // if(post){
@@ -20,7 +23,7 @@ module.exports.profile = async function(req, res){
 
 module.exports.signIn = function(req, res){
     if(req.isAuthenticated()){
-        return res.redirect('/users/profiles');
+        return res.redirect(`/users/profiles`);
     }
     return res.render('sign-in', {
         title:"sign in",
@@ -100,4 +103,16 @@ module.exports.signOut = function(req, res){
             return res.redirect('/');
         }, 100);
     });    
+}
+
+module.exports.update = function(req, res){
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body)
+        .then(function(user){
+            req.flash('success', 'user info updated');
+            return res.redirect('/');
+        })
+    }else{
+        return res.status(401).send("unauthorized");
+    }
 }

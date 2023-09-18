@@ -24,11 +24,15 @@
                 <a href="/users/sign-in">
                     <div class="header-btns">
                         <%if(locals.user){%>
-                            <i class="fa-regular fa-user"></i>
-                            <%= user.name %>
+                            <a href="/users/profiles/<%= user.id %>">
+                                <i class="fa-regular fa-user"></i>
+                                <%= user.name %>
+                            </a>
                         <%}else{%>
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            Sign In
+                            <a href="/users/sign-in">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Sign In
+                            </a>
                         <%}%>
                     </div>
                     
