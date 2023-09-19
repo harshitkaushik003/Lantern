@@ -25,6 +25,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
+  overflow-x: hidden;
 }
 #main-home-container .main-body .post-display .user-name {
   width: 100%;
@@ -59,6 +60,7 @@
   position: relative;
   left: 20px;
   top: 20px;
+  overflow: hidden;
 }
 #main-home-container .main-body .post-display .comment-section form {
   color: white;
