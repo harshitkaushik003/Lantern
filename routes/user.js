@@ -18,7 +18,7 @@ router.post('/create-session', (req, res, next) => {
   }, userController.createSession);
   
 router.get('/sign-out', userController.signOut);
-
+router.get('/change', userController.change);
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in', failureFlash:true}), userController.createSession);
 

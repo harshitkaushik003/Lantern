@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const validator = require('validator');
 
+const changeMailer = require('../mailers/change');
 module.exports.profile = async function(req, res){
     // const post = await Post.find({user: req.user.id}).populate('user').populate('comments');
     const user = await User.findById(req.params.id);
@@ -19,6 +20,12 @@ module.exports.profile = async function(req, res){
              
     // }
 
+}
+
+module.exports.change = function(req, res){
+    req.flash("email sent");
+    changeMailer.changePass(req.user);
+    return res.redirect('back');
 }
 
 module.exports.signIn = function(req, res){
