@@ -42,11 +42,19 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const renderTemplate = async (data, relativePath) => {
+const renderTemplate = (data, relativePath) => {
     try {
-        const mailHTML = await ejs.renderFile(
+        let mailHTML;
+        ejs.renderFile(
             path.join(__dirname, '../views/mailers', relativePath),
-            data
+            data,
+            function(err, template){
+                if(err){
+                    console.log("Error in rendering template", err);
+                    return;
+                }
+                mailHTML = template;
+            }
         );
         return mailHTML;
     } catch (err) {
