@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="/css/post.css">
+<% if (locals.flash.success && locals.flash.success.length > 0) { %>
+    <div class="flash-container">
+        <%= flash.success %>
+        <a href="/">Go to Home</a>
+    </div>        
+<% } %>
 <div id="main">
     <div id="post-body">
         <div id="post-heading">
@@ -19,5 +25,5 @@
        
     </div>
 </div>
-<script src="/js/home_posts.js"></script>
+<!-- <script src="/js/home_posts.js"></script> -->
 

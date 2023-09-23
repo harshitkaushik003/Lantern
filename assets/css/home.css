@@ -18,7 +18,7 @@
 }
 #main-home-container .main-body .post-display {
   width: 90%;
-  height: auto;
+  min-height: 200px;
   box-shadow: 1px 1px 5px 5px #7709a6;
   padding-top: 20px;
   padding-bottom: 50px;
