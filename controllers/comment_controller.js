@@ -18,6 +18,15 @@ module.exports.create = async function(req, res){
     
         // Send a comment notification email
         commentsMailer.newComment(comment);
+        if(req.xhr){
+          return res.json(200, {
+            data: {
+              comment: comment,
+              user: comment.user.name,
+            },
+            message: "Comment added"
+          })
+        }
     
         res.redirect('/');
       } else {
@@ -31,10 +40,21 @@ module.exports.destroy = async function(req, res){
     if(comment.user == req.user.id){
         let postId = comment.post;
         comment.deleteOne();
-        Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}})
-        .then(function(){
-            return res.redirect('back');
-        })
+        await Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}})
+        // .then(function(){
+        //     return res.redirect('back');
+        // })
+        if(req.xhr){
+          return res.status(200).json(
+            {
+              data: {
+                comment_id: req.params.id
+              },
+              message: "Comment Deleted successfully"
+            }
+          )
+        }
+        return res.redirect('back');
     }else{
         return res.redirect('back');
     }

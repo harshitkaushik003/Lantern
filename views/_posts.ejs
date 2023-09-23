@@ -23,14 +23,14 @@
     </div>
     <div class="comment-section">
         <% if (locals.user)  { %>
-            <form action="/comments/create" method="POST">
+            <form id="new-comment-form" action="/comments/create" method="POST">
                 <input type="text" class="comment-content" name="content" placeholder="add a comment" required>
                 <input type="hidden" name="post" value="<%= posts._id %>">
                 <input type="submit" value="Add">
             </form>
         <% } %>
         <div class="comment-list">
-            <div id="post-comments-<%=posts._id%>">
+            <div id="post-comments-<%=posts._id%>" class="comment-container-dom">
                 <% for(comments of posts.comments){ %>
                     <%- include('_comment') %>
                 <% } %>
@@ -38,4 +38,4 @@
         </div>
     </div>
 </div>    
-<!-- <script src="/js/home_posts.js"></script> -->
+<!-- <script src="/js/home-post-comment.js"></script> -->
