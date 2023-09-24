@@ -60,9 +60,13 @@
             .interactions{
                 .fa-heart{
                     position: relative;
-                    left: 20px;
+                    left: 39px;
                     top: 10px;
                     cursor: pointer;
+                }
+                .like-count{
+                    position: relative;
+                    top: 10px;
                 }
             }
             .comment-section{

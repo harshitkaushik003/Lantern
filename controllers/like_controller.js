@@ -26,7 +26,7 @@ module.exports.toggleLike = async function(req, res){
             likeable.likes.pull(existingLike._id);
             likeable.save();
             existingLike.deleteOne();
-            deleted: true;
+            deleted =  true;
         }else{
             let newLike = await Like.create({
                 user: req.user._id,
@@ -37,12 +37,17 @@ module.exports.toggleLike = async function(req, res){
             likeable.likes.push(newLike._id);
             likeable.save();
         }
-        return res.json(200, {
-            message: "Request Successful",
-            data:{
-                deleted:deleted
-            }
-        })
+        if(req.xhr){
+            return res.status(200).json({
+                data:{
+                    deleted:deleted,
+                    post_id: req.query.id
+                },
+                message: "Request Successful",
+            })
+        }
+        return res.redirect("back");
+
     }catch(err){
         console.log(err);
         return res.json(500, {
