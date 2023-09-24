@@ -19,7 +19,21 @@
         </p>
     </div>
     <div class="interactions">
-        <i class="fa-regular fa-heart"></i>
+        <a href="/likes/toggle?id=<%= posts._id %>&type=Post" class="like-button">
+            <% let isLiked = false; %>
+            <% for(like of posts.likes) { %>
+                <% if (locals.user) { %>
+                    <% if (like.user == locals.user.id) { %>
+                        <i class="fa-regular fa-heart" id="like-heart-<%=posts._id%>" style="color: red"></i>
+                        <% isLiked = true; %>
+                    <% } %>                
+                <% } %>     
+            <% } %>
+            <% if (!isLiked) { %>
+                <i class="fa-regular fa-heart" id="like-heart-<%=posts._id%>"></i>
+            <% } %>
+            <span id="like-number-<%= posts._id %>" class="like-count"><%= posts.likes.length %></span>
+        </a>
     </div>
     <div class="comment-section">
         <% if (locals.user)  { %>
@@ -39,3 +53,6 @@
     </div>
 </div>    
 <!-- <script src="/js/home-post-comment.js"></script> -->
+<script>
+    
+</script>

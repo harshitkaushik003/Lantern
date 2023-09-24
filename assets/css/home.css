@@ -51,9 +51,13 @@
 }
 #main-home-container .main-body .post-display .interactions .fa-heart {
   position: relative;
-  left: 20px;
+  left: 39px;
   top: 10px;
   cursor: pointer;
+}
+#main-home-container .main-body .post-display .interactions .like-count {
+  position: relative;
+  top: 10px;
 }
 #main-home-container .main-body .post-display .comment-section {
   width: 100%;
