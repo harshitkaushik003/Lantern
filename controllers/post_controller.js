@@ -43,7 +43,7 @@ module.exports.destroy = async function(req,res){
         const post = await Post.findById(req.params.id);
         if(post.user == req.user.id){
             post.deleteOne();
-            Comment.deleteMany({post: req.params.id});
+            await Comment.deleteMany({post: req.params.id});
             if(req.xhr){
                 // console.log("reached at this point");
                 return res.status(200).json({
