@@ -10,7 +10,52 @@
         // background-color: blue;
         border-right: 1px solid white;
         // position: fixed;
-
+        position: relative;
+        #chatting-box{
+            position: absolute;
+            width: 290px;
+            height: 350px;
+            // background-color: red;
+            border: 2px dotted white;
+            bottom:100px;
+            display: flex;
+            flex-direction: column;
+            #chatting-header{
+                width: 100%;
+                height: 50px;
+                // background-color: white;
+                border-bottom: 1px dotted white ;
+                span{
+                    color: white;
+                    
+                }
+            }
+            #chatting-main{
+                height: 250px;
+                // background-color: #7709a6;
+            }
+            #chatting-button{
+                display: flex;
+                height: 50px;
+                // background-color: white;
+                border-top: 1px solid black;
+                #chatting-textbox{
+                    height: 94%;
+                    width: 222px;
+                    border: 1px solid white;
+                    border-bottom: none;
+                    background-color: transparent;
+                }
+                input[type="submit"]{
+                    border:none;
+                    
+                    height: 100%;
+                    width: 78px;
+                    background-color:#7709a6;
+                    color: white;
+                }
+            }
+        }
     }
     .main-body{
         width: 60%;
