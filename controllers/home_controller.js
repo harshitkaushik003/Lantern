@@ -13,9 +13,6 @@ module.exports.home = async function(req, res){
                 populate:{
                     path:'user',
                     select: '-password'
-                },
-                populate: {
-                    path: 'likes'
                 }
             }
         ).populate('likes');

@@ -7,6 +7,47 @@
   width: 20%;
   height: 100%;
   border-right: 1px solid white;
+  position: relative;
+}
+#main-home-container .functionality #chatting-box {
+  position: absolute;
+  width: 290px;
+  height: 350px;
+  border: 2px dotted white;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+#main-home-container .functionality #chatting-box #chatting-header {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px dotted white;
+}
+#main-home-container .functionality #chatting-box #chatting-header span {
+  color: white;
+}
+#main-home-container .functionality #chatting-box #chatting-main {
+  height: 250px;
+}
+#main-home-container .functionality #chatting-box #chatting-button {
+  display: flex;
+  height: 50px;
+  border-top: 1px solid black;
+}
+#main-home-container .functionality #chatting-box #chatting-button #chatting-textbox {
+  height: 94%;
+  width: 222px;
+  border: 1px solid white;
+  border-bottom: none;
+  background-color: transparent;
+  color: white;
+}
+#main-home-container .functionality #chatting-box #chatting-button input[type=submit] {
+  border: none;
+  height: 100%;
+  width: 78px;
+  background-color: #7709a6;
+  color: white;
 }
 #main-home-container .main-body {
   width: 60%;

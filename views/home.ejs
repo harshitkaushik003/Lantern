@@ -2,6 +2,18 @@
 <div id="main-home-container">
     <div class="functionality">
         some content
+        <div id="chatting-box">
+            <div id="chatting-header">
+                <span><strong>Chat here</strong></span>
+            </div>
+            <div id="chatting-main">
+
+            </div>
+            <div id="chatting-button">
+                <input type="text" id="chatting-textbox">
+                <input type="submit" value="Send" id="send-message">
+            </div>
+        </div>
     </div>
     <div class="main-body">
         <%for (posts of posts){%>
@@ -29,5 +41,12 @@
 <script src="/js/home_posts.js"></script>
 <script src="/js/home-post-comment.js"></script>
 <script src="/js/like-post.js"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script src="/js/chat_engine.js"></script>
+<% if (locals.user) { %>
+    <script>
+        new ChatEngine('chatting-box', '<%= locals.user.email %>');
+    </script>
+<% } %>
 
 
