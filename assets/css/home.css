@@ -40,6 +40,7 @@
   border: 1px solid white;
   border-bottom: none;
   background-color: transparent;
+  color: white;
 }
 #main-home-container .functionality #chatting-box #chatting-button input[type=submit] {
   border: none;
